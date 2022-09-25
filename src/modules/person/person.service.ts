@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { DeleteResult } from 'typeorm';
-import { CreatePersonRequestDTO } from '../../dto/create-person-request.dto';
+import { CreatePersonRequestDTO } from '../../dto/person/create-person-request.dto';
+import { UpdatePersonRequestDTO } from '../../dto/person/update-person.request.dto';
 import { Person } from '../../entities/person.entity';
 import { PersonRepository } from './person.repository';
 
@@ -45,7 +46,7 @@ export class PersonService {
     return person;
   };
 
-  update = async (id: string, dto: CreatePersonRequestDTO): Promise<Person> => {
+  update = async (id: string, dto: UpdatePersonRequestDTO): Promise<Person> => {
     const newPerson: Partial<Person> = {
       id,
       firstName: dto.firstName,

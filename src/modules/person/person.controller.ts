@@ -7,7 +7,8 @@ import {
   Patch,
   Delete,
 } from '@nestjs/common';
-import { CreatePersonRequestDTO } from '../../dto/create-person-request.dto';
+import { CreatePersonRequestDTO } from '../../dto/person/create-person-request.dto';
+import { UpdatePersonRequestDTO } from '../../dto/person/update-person.request.dto';
 import { Person } from '../../entities/person.entity';
 import { PersonService } from './person.service';
 
@@ -33,7 +34,7 @@ export class PersonController {
   @Patch(':id')
   async update(
     @Param('id') id: string,
-    @Body() dto: CreatePersonRequestDTO,
+    @Body() dto: UpdatePersonRequestDTO,
   ): Promise<Person> {
     return await this.personService.update(id, dto);
   }

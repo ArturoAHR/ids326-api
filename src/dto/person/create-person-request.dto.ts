@@ -6,7 +6,7 @@ import {
   IsString,
   IsUUID,
 } from 'class-validator';
-import { BaseDTO } from './base.dto';
+import { BaseDTO } from '../base.dto';
 
 export class CreatePersonRequestDTO extends BaseDTO {
   @IsString()

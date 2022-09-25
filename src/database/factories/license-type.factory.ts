@@ -1,6 +1,6 @@
 import { LicenseType } from '../../entities/license-type.entity';
 
-export const EXAMPLE_LICENSE_TYPES: LicenseType[] = [
+export const LICENSE_TYPES: LicenseType[] = [
   {
     id: '19487abe-38ce-4989-bab5-803e19c09255',
     name: 'Free',

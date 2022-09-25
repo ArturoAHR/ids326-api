@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 import { idColumn, metaDataColumns } from './1664063190515-base-entity-columns';
 
-export class userEntity1664063190516 implements MigrationInterface {
+export class personEntity1664063190516 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";');
 

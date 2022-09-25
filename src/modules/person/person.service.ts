@@ -66,6 +66,6 @@ export class PersonService {
 
   delete = async (id: string): Promise<boolean> => {
     const deleteResult: DeleteResult = await this.personRepository.delete(id);
-    return deleteResult.affected > 0;
+    return deleteResult?.affected && deleteResult.affected > 0;
   };
 }

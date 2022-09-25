@@ -26,7 +26,7 @@ export const ROLES: Role[] = [
     deletedAt: null,
   },
   {
-    id: 'af295de5-6969-4afb-bb86-1366c351375a',
+    id: 'adc864dc-0baa-4535-851b-261e389ec19b',
     name: 'Admin',
     description: 'Administrates the system',
     createdAt: new Date(),
@@ -34,7 +34,7 @@ export const ROLES: Role[] = [
     deletedAt: null,
   },
   {
-    id: 'af295de5-6969-4afb-bb86-1366c351375a',
+    id: '9894e17b-e597-4371-8506-d92478e15b16',
     name: 'Manager',
     description: 'Manages employees',
     createdAt: new Date(),

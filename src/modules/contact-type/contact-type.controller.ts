@@ -14,21 +14,21 @@ import { ContactTypeService } from './contact-type.service';
 
 @Controller('contact-type')
 export class ContactTypeController {
-  constructor(private readonly roleService: ContactTypeService) {}
+  constructor(private readonly contactTypeService: ContactTypeService) {}
 
   @Get()
   async getAll(): Promise<ContactType[]> {
-    return await this.roleService.getAll();
+    return await this.contactTypeService.getAll();
   }
 
   @Get(':id')
   async getById(@Param('id') id: string): Promise<ContactType> {
-    return await this.roleService.getById(id);
+    return await this.contactTypeService.getById(id);
   }
 
   @Post()
   async create(@Body() dto: CreateContactTypeRequestDTO): Promise<ContactType> {
-    return await this.roleService.create(dto);
+    return await this.contactTypeService.create(dto);
   }
 
   @Patch(':id')
@@ -36,11 +36,11 @@ export class ContactTypeController {
     @Param('id') id: string,
     @Body() dto: UpdateContactTypeRequestDTO,
   ): Promise<ContactType> {
-    return await this.roleService.update(id, dto);
+    return await this.contactTypeService.update(id, dto);
   }
 
   @Delete(':id')
   async delete(@Param('id') id: string): Promise<boolean> {
-    return await this.roleService.delete(id);
+    return await this.contactTypeService.delete(id);
   }
 }

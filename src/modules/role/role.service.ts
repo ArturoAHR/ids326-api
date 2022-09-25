@@ -40,6 +40,6 @@ export class RoleService {
 
   delete = async (id: string): Promise<boolean> => {
     const deleteResult: DeleteResult = await this.roleRepository.delete(id);
-    return deleteResult.affected > 0;
+    return deleteResult?.affected && deleteResult.affected > 0;
   };
 }

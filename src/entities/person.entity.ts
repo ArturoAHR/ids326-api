@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { Company } from './company.entity';
 import { ContactType } from './contact-type.entity';
@@ -37,16 +37,19 @@ export class Person extends BaseEntity {
   @Column({ name: 'company_id', type: 'uuid' })
   companyId: string;
 
-  //If seeders are failing comment these four attributes
   @ManyToOne(() => Role, {})
+  @JoinColumn({ name: 'role_id', referencedColumnName: 'id' })
   role?: Promise<Role>;
 
   @ManyToOne(() => ContactType, {})
+  @JoinColumn({ name: 'contact_type_id', referencedColumnName: 'id' })
   contactType?: Promise<ContactType>;
 
   @ManyToOne(() => Department, {})
+  @JoinColumn({ name: 'department_id', referencedColumnName: 'id' })
   department?: Promise<Department>;
 
   @ManyToOne(() => Company, {})
+  @JoinColumn({ name: 'company_id', referencedColumnName: 'id' })
   company?: Promise<Company>;
 }

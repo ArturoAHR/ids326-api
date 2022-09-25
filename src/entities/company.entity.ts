@@ -1,7 +1,8 @@
-import { Column, JoinColumn, OneToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { Person } from './person.entity';
 
+@Entity('company')
 export class Company extends BaseEntity {
   @Column({ name: 'name', type: 'varchar' })
   name: string;

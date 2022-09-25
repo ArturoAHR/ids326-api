@@ -11,5 +11,5 @@ export class Permission extends BaseEntity {
   description: string;
 
   @ManyToMany(() => User, (user) => user.permissions)
-  users: Promise<User[]>;
+  users?: Promise<User[]>;
 }

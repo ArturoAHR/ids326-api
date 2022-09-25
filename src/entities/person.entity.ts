@@ -38,14 +38,14 @@ export class Person extends BaseEntity {
   companyId: string;
 
   @ManyToOne(() => Role, {})
-  role: Promise<Role>;
+  role?: Promise<Role>;
 
   @ManyToOne(() => ContactType, {})
-  contactType: Promise<ContactType>;
+  contactType?: Promise<ContactType>;
 
   @ManyToOne(() => Department, {})
-  department: Promise<Department>;
+  department?: Promise<Department>;
 
   @ManyToOne(() => Company, {})
-  company: Promise<Company>;
+  company?: Promise<Company>;
 }

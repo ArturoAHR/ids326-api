@@ -1,5 +1,9 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
+import { Company } from './company.entity';
+import { ContactType } from './contact-type.entity';
+import { Department } from './department.entity';
+import { Role } from './role.entity';
 
 @Entity('person')
 export class Person extends BaseEntity {
@@ -33,19 +37,15 @@ export class Person extends BaseEntity {
   @Column({ name: 'companyId', type: 'uuid' })
   companyId: string;
 
-  // @ManyToOne(() => Role, { nullable: false, eager: true })
-  // @JoinColumn({ name: 'role_id' })
-  // role: Role;
+  @ManyToOne(() => Role, {})
+  role: Role;
 
-  // @ManyToOne(() => ContactType, { nullable: false, eager: true })
-  // @JoinColumn({ name: 'contact_type_id' })
-  // role: ContactType;
+  @ManyToOne(() => ContactType, {})
+  contactType: ContactType;
 
-  // @ManyToOne(() => DepartmentType, { nullable: false, eager: true })
-  // @JoinColumn({ name: 'department_id' })
-  // role: DepartmentType;
+  @ManyToOne(() => Department, {})
+  department: Department;
 
-  // @ManyToOne(() => Company, { nullable: false, eager: true })
-  // @JoinColumn({ name: 'company_id' })
-  // role: Company;
+  @ManyToOne(() => Company, {})
+  company: Company;
 }

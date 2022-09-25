@@ -1,6 +1,7 @@
-import { Column, Entity, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
 import { LicenseType } from './license-type.entity';
+import { Permission } from './permission.entity';
 
 @Entity('user')
 export class User extends BaseEntity {
@@ -18,4 +19,8 @@ export class User extends BaseEntity {
 
   @ManyToOne(() => LicenseType, {})
   licenseType: LicenseType;
+
+  @ManyToMany(() => Permission, (permission) => permission.users)
+  @JoinTable()
+  permissions: Promise<Permission[]>;
 }

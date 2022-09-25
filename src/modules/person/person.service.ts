@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DeleteResult } from 'typeorm';
-import { CreatePersonRequestDTO } from '../../dto/create-person-request.dto';
+import { CreatePersonRequestDTO } from '../../dto/person/create-person-request.dto';
 import { Person } from '../../entities/person.entity';
 import { PersonRepository } from './person.repository';
 

@@ -25,16 +25,16 @@ export class Person extends BaseEntity {
   @Column({ name: 'email', type: 'varchar' })
   email: string;
 
-  @Column({ name: 'roleId', type: 'uuid' })
+  @Column({ name: 'role_id', type: 'uuid' })
   roleId: string;
 
-  @Column({ name: 'contactTypeId', type: 'uuid' })
+  @Column({ name: 'contact_type_id', type: 'uuid' })
   contactTypeId: string;
 
-  @Column({ name: 'departmentId', type: 'uuid' })
+  @Column({ name: 'department_id', type: 'uuid' })
   departmentId: string;
 
-  @Column({ name: 'companyId', type: 'uuid' })
+  @Column({ name: 'company_id', type: 'uuid' })
   companyId: string;
 
   @ManyToOne(() => Role, {})

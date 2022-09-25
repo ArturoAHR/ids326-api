@@ -1,5 +1,6 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, ManyToOne } from 'typeorm';
 import { BaseEntity } from './base.entity';
+import { LicenseType } from './license-type.entity';
 
 @Entity('user')
 export class User extends BaseEntity {
@@ -15,7 +16,6 @@ export class User extends BaseEntity {
   @Column({ name: 'license_type_id', type: 'varchar' })
   licenseTypeId: string;
 
-  // @ManyToOne(() => LicenseType, { nullable: false, eager: true })
-  // @JoinColumn({ name: 'license_type_id' })
-  // licenseType: LicenseType;
+  @ManyToOne(() => LicenseType, {})
+  licenseType: LicenseType;
 }

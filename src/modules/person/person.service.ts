@@ -43,4 +43,22 @@ export class PersonService {
     await person.contactType;
     return person;
   };
+
+  update = async (id: string, dto: CreatePersonRequestDTO): Promise<Person> => {
+    const newPerson: Partial<Person> = {
+      id,
+      firstName: dto.firstName,
+      middleName: dto.middleName,
+      lastName: dto.lastName,
+      email: dto.email,
+      phone: dto.phone,
+      staff: dto.staff,
+      contactTypeId: dto.contactTypeId,
+      companyId: dto.companyId,
+      roleId: dto.roleId,
+      departmentId: dto.departmentId,
+    };
+    const savedPerson = this.personRepository.save(newPerson);
+    return savedPerson;
+  };
 }

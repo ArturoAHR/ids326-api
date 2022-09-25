@@ -25,27 +25,28 @@ export class Person extends BaseEntity {
   @Column({ name: 'email', type: 'varchar' })
   email: string;
 
-  @Column({ name: 'roleId', type: 'uuid' })
+  @Column({ name: 'role_id', type: 'uuid' })
   roleId: string;
 
-  @Column({ name: 'contactTypeId', type: 'uuid' })
+  @Column({ name: 'contact_type_id', type: 'uuid' })
   contactTypeId: string;
 
-  @Column({ name: 'departmentId', type: 'uuid' })
+  @Column({ name: 'department_id', type: 'uuid' })
   departmentId: string;
 
-  @Column({ name: 'companyId', type: 'uuid' })
+  @Column({ name: 'company_id', type: 'uuid' })
   companyId: string;
 
+  //If seeders are failing comment these four attributes
   @ManyToOne(() => Role, {})
-  role: Promise<Role>;
+  role?: Promise<Role>;
 
   @ManyToOne(() => ContactType, {})
-  contactType: Promise<ContactType>;
+  contactType?: Promise<ContactType>;
 
   @ManyToOne(() => Department, {})
-  department: Promise<Department>;
+  department?: Promise<Department>;
 
   @ManyToOne(() => Company, {})
-  company: Promise<Company>;
+  company?: Promise<Company>;
 }

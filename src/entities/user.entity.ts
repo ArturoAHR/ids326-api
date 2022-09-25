@@ -18,9 +18,9 @@ export class User extends BaseEntity {
   licenseTypeId: string;
 
   @ManyToOne(() => LicenseType, {})
-  licenseType: Promise<LicenseType>;
+  licenseType?: Promise<LicenseType>;
 
   @ManyToMany(() => Permission, (permission) => permission.users)
   @JoinTable()
-  permissions: Promise<Permission[]>;
+  permissions?: Promise<Permission[]>;
 }

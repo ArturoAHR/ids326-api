@@ -27,5 +27,5 @@ export class Company extends BaseEntity {
 
   @OneToOne(() => Person, {})
   @JoinColumn({ name: 'ceo_id' })
-  ceo: Promise<Person>;
+  ceo?: Promise<Person>;
 }

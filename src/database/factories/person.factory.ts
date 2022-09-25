@@ -1,0 +1,36 @@
+import { Person } from '../../entities/person.entity';
+
+export const EXAMPLE_PEOPLE: Person[] = [
+  {
+    id: 'ad5aa509-6151-4186-8021-8d411774f69f',
+    firstName: 'Arturo',
+    middleName: 'Aurelio',
+    lastName: 'Hernandez Rodriguez',
+    email: 'arturo@gmail.com',
+    phone: '809-566-0500',
+    staff: true,
+    companyId: 'f9c0d889-0893-498e-997d-5e1e5d8036fd',
+    departmentId: '69d5070f-28f4-4d81-8fda-1a5ee2209eb2',
+    roleId: 'a9ea8997-9884-4afd-8c57-5534dd5a4e2c',
+    contactTypeId: '632d4a8a-bbc6-449b-8e80-1e7a29ab7cb5',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    deletedAt: null,
+  },
+  {
+    id: 'f40885e5-3bb5-4b00-bb75-d0c10b535025',
+    firstName: 'John',
+    middleName: null,
+    lastName: 'Doe',
+    email: 'john@doe.com',
+    phone: '809-320-2410',
+    staff: false,
+    companyId: 'bf340a61-10de-460b-95a2-2ef5da16fb19',
+    departmentId: '69d5070f-28f4-4d81-8fda-1a5ee2209eb2',
+    roleId: '9894e17b-e597-4371-8506-d92478e15b16',
+    contactTypeId: '91071fa2-1b6f-450e-9c3d-98eda34f0145',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    deletedAt: null,
+  },
+];

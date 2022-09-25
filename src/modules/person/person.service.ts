@@ -34,4 +34,13 @@ export class PersonService {
     const savedPerson = this.personRepository.save(newPerson);
     return savedPerson;
   };
+
+  getById = async (id: string): Promise<Person> => {
+    const person = await this.personRepository.getById(id);
+    await person.role;
+    await person.company;
+    await person.department;
+    await person.contactType;
+    return person;
+  };
 }

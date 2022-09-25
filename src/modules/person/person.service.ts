@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { DeleteResult } from 'typeorm';
 import { CreatePersonRequestDTO } from '../../dto/create-person-request.dto';
 import { Person } from '../../entities/person.entity';
 import { PersonRepository } from './person.repository';
@@ -31,7 +32,7 @@ export class PersonService {
       roleId: dto.roleId,
       departmentId: dto.departmentId,
     };
-    const savedPerson = this.personRepository.save(newPerson);
+    const savedPerson = await this.personRepository.save(newPerson);
     return savedPerson;
   };
 
@@ -58,7 +59,12 @@ export class PersonService {
       roleId: dto.roleId,
       departmentId: dto.departmentId,
     };
-    const savedPerson = this.personRepository.save(newPerson);
+    const savedPerson = await this.personRepository.save(newPerson);
     return savedPerson;
+  };
+
+  delete = async (id: string): Promise<boolean> => {
+    const deleteResult: DeleteResult = await this.personRepository.delete(id);
+    return deleteResult.affected > 0;
   };
 }

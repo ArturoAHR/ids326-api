@@ -37,6 +37,7 @@ export class Person extends BaseEntity {
   @Column({ name: 'company_id', type: 'uuid' })
   companyId: string;
 
+  //If seeders are failing comment these four attributes
   @ManyToOne(() => Role, {})
   role?: Promise<Role>;
 

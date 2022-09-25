@@ -23,6 +23,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ./src/config/ormconfig.ts",
     "migration:generate": "typeorm migration:generate -n",
+    "migration:create": "typeorm:cli -- migration:create -n",
     "migration:run": "typeorm migration:run",
     "migration:revert": "typeorm migration:revert",
     "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli seed",

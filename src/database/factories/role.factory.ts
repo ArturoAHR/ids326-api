@@ -41,4 +41,12 @@ export const ROLES: Role[] = [
     updatedAt: new Date(),
     deletedAt: null,
   },
+  {
+    id: '06349202-fb4b-46df-a4d4-935a25ee7e99',
+    name: 'CEO',
+    description: 'Company CEO',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    deletedAt: null,
+  },
 ];

@@ -37,4 +37,13 @@ export const DEPARTMENTS: Department[] = [
     updatedAt: new Date(),
     deletedAt: null,
   },
+  {
+    id: '3b9be0f6-496f-4049-9c3c-cfadb31a3bb8',
+    name: 'Management',
+    description: 'Management Department',
+    code: 'HR',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    deletedAt: null,
+  },
 ];

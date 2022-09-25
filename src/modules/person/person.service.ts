@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CreatePersonRequestDTO } from '../../dto/create-person-request.dto';
 import { Person } from '../../entities/person.entity';
 import { PersonRepository } from './person.repository';
 
@@ -15,5 +16,22 @@ export class PersonService {
       await person.contactType;
     }
     return people;
+  };
+
+  create = async (dto: CreatePersonRequestDTO): Promise<Person> => {
+    const newPerson: Partial<Person> = {
+      firstName: dto.firstName,
+      middleName: dto.middleName,
+      lastName: dto.lastName,
+      email: dto.email,
+      phone: dto.phone,
+      staff: dto.staff,
+      contactTypeId: dto.contactTypeId,
+      companyId: dto.companyId,
+      roleId: dto.roleId,
+      departmentId: dto.departmentId,
+    };
+    const savedPerson = this.personRepository.save(newPerson);
+    return savedPerson;
   };
 }

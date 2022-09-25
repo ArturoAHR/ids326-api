@@ -25,7 +25,7 @@ export class Company extends BaseEntity {
   @Column({ name: 'website', type: 'varchar', nullable: true })
   website: string;
 
-  @OneToOne(() => Person, { eager: true })
+  @OneToOne(() => Person, {})
   @JoinColumn({ name: 'ceo_id' })
   ceo: Promise<Person>;
 }

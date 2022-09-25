@@ -2,7 +2,7 @@ import { Connection } from 'typeorm';
 import { Factory, Seeder } from 'typeorm-seeding';
 import { PERMISSIONS } from '../factories/permission.factory';
 
-export default class CreateRoles implements Seeder {
+export default class CreatePermissions implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<void> {
     await connection
       .createQueryBuilder()

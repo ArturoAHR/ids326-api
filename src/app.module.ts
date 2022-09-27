@@ -9,7 +9,11 @@ import { Permission } from './entities/permission.entity';
 import { Person } from './entities/person.entity';
 import { Role } from './entities/role.entity';
 import { User } from './entities/user.entity';
+import { CompanyModule } from './modules/company/company.module';
+import { ContactTypeModule } from './modules/contact-type/contact-type.module';
+import { DepartmentModule } from './modules/department/department.module';
 import { PersonModule } from './modules/person/person.module';
+import { RoleModule } from './modules/role/role.module';
 dotenv.config();
 
 @Module({
@@ -38,6 +42,10 @@ dotenv.config();
       autoLoadEntities: true,
     }),
     PersonModule,
+    CompanyModule,
+    DepartmentModule,
+    RoleModule,
+    ContactTypeModule,
   ],
 })
 export class AppModule {}

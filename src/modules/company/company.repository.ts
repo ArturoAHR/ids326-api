@@ -6,4 +6,8 @@ export class CompanyRepository extends Repository<Company> {
   async getAll(): Promise<Company[]> {
     return await this.createQueryBuilder('company').getMany();
   }
+
+  async getById(id: string): Promise<Company> {
+    return await this.findOneOrFail({ id: id });
+  }
 }

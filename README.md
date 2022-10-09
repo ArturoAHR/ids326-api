@@ -42,5 +42,13 @@
   * `DELETE /contact-type` - Delete a Contact Type record.
 * Company
   * `GET /company` - Get All Company records.
+  * `GET /company/:id` - Get a Company by ID.
+  * `POST /company` - Create a Company record.
+  * `PATCH /company/:id` - Update a Company record.
+  * `DELETE /company` - Delete a Company record.s
 * Department
   * `GET /department` - Get All Department records.
+  * `GET /department/:id` - Get a Department by ID.
+  * `POST /department` - Create a Department record.
+  * `PATCH /department/:id` - Update a Department record.
+  * `DELETE /department` - Delete a Department record.

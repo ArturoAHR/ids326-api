@@ -20,7 +20,6 @@
 
   * `npm run start`
 
-
 **Routes**
 
 * Person

@@ -11,6 +11,9 @@ export class CompanyService {
 
   getAll = async (): Promise<Company[]> => {
     const companies = await this.companyRepository.getAll();
+    for (const company of companies) {
+      await company.ceo;
+    }
     return companies;
   };
 
@@ -30,6 +33,7 @@ export class CompanyService {
 
   getById = async (id: string): Promise<Company> => {
     const company = await this.companyRepository.getById(id);
+    await company.ceo;
     return company;
   };
 

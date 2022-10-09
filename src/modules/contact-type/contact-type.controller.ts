@@ -7,8 +7,8 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { CreateContactTypeRequestDTO } from '../../dto/contact-type/create-contact-type-request.dto';
-import { UpdateContactTypeRequestDTO } from '../../dto/contact-type/update-contact-type-request.dto';
+import { CreateContactTypeRequestDTO } from '../../dto/contact-type/create-contact-type-response.dto';
+import { UpdateContactTypeRequestDTO } from '../../dto/contact-type/update-contact-type-response.dto';
 import { ContactType } from '../../entities/contact-type.entity';
 import { ContactTypeService } from './contact-type.service';
 
